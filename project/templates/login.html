@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="POST">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="acc_type" required>
+                <option selected="" value="">Are You a teacher or student?</option>
+                <option value="stdnt">Student</option>
+                <option value="teacher">Teacher</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+{% endblock %}

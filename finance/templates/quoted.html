@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Information
+{% endblock %}
+
+{% block main %}
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Company</th>
+            <th scope="col">Price of a share</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ price }}</td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
+

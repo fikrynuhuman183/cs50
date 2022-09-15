@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}
+    Students
+{% endblock %}
+
+{% block main %}
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Subject</th>
+            <th scope="col">Teacher</th>
+            <th scope="col">Meeting Link</th>
+            <th scope="col">Remove Subject</th>
+
+        </tr>
+        </thead>
+        <tbody>
+            {% for sub in sub_links %}
+                <tr>
+                    <td>{{ sub["name"] }}</td>
+                    <td>{{ sub["username"] }}</td>
+                    {% if sub["link"] != None %}
+                        <td><a href={{ sub["link"] }} class="btn btn-primary" type="submit">Join Now</a></td>
+                    {% else %}
+                        <td>Please wait until link is provided</td>
+                    {% endif %}
+                    <td><form action="/student" method="POST"><button class="btn btn-primary" type="submit" name="subject" value={{ sub["name"] }}>Remove</button></form></td>
+
+                    </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

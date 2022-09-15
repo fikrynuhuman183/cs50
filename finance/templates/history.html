@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}
+{% endblock %}
+
+{% block main %}
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Name</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for share in shares %}
+                <tr>
+                    <td>{{ share["com_symbol"] }}</td>
+                    <td>{{ share["name"] }}</td>
+                    <td>{{ share["num_share"] }}</td>
+                    <td>{{ share["total"] }}</td>
+                    <td>{{ share["action"] }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td> Total </td>
+                <td>{{ total }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+{% endblock %}

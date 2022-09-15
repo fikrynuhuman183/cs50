@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="POST">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="acc_type" required>
+                <option value="" selected="">Are You a teacher or student?</option>
+                <option value = "stdnt">Student</option>
+                <option value ="teacher">Teacher</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder="Repeat Password" type="password">
+        </div>
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="subject" >
+                <option selected="">If You are a teacher please select a Subject</option>
+                {% for subject in subjects %}
+                    <option value = {{ subject["sub_id"] }}>{{ subject["name"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto" style="width:25%" id="password" name="code" placeholder="If You are a teacher Please enter the code" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+
+    </form>
+{% endblock %}

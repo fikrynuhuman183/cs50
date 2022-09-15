@@ -1,0 +1,4 @@
+codecs50
+Flask
+Flask-Session
+requests

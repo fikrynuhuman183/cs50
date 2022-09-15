@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}
+{% endblock %}
+
+{% block main %}
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Name</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for share in shares %}
+                {% if share["numsha"] != 0 %}
+                    <tr>
+                        <td>{{ share["com_symbol"] }}</td>
+                        <td>{{ share["name"] }}</td>
+                        <td>{{ share["numsha"] }}</td>
+                        <td>{{ share["total"] }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td> Total </td>
+                <td>{{ total }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td> Cash </td>
+                <td>{{ cash }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+{% endblock %}
