@@ -1,0 +1,67 @@
+sort1 uses: bubblesort
+sorted10000 = 	real    0m0.099s
+	            user    0m0.010s
+	            sys     0m0.035s
+reversed10000 = real    0m0.295s
+	            user    0m0.192s
+	            sys     0m0.059s
+
+random10000 = 	real    0m0.294s
+	            user    0m0.247s
+	            sys     0m0.036s
+random5000 =  	real    0m0.081s
+		        user    0m0.056s
+		        sys     0m0.021s
+
+sorted5000 =    real    0m0.032s
+                user    0m0.005s
+                sys     0m0.022s
+reversed5000 = real    0m0.098s
+                user    0m0.039s
+                sys     0m0.035s
+random50000 =   real    0m10.426s
+                user    0m6.931s
+                sys     0m0.218s
+
+
+How do you know?: this is the bubble sort algorithm. the difference in sorted and reversed
+text files is comparitively higher when compared to other two algorithms.
+only in bubble sort these two cases have a significant difference.
+
+
+sort2 uses: mergesort
+sorted10000 =   real    0m0.100s
+                user    0m0.012s
+                sys     0m0.040s
+reversed10000 = real    0m0.105s
+                user    0m0.007s
+                sys     0m0.043s
+
+random10000 =   real    0m0.097s
+                user    0m0.021s
+                sys     0m0.030s
+random500000 =  real    0m3.973s
+                user    0m0.037s
+                sys     0m0.175s
+
+How do you know?: This could be selection sort or merge sort.
+considering the fact that the time takes for large files is very low this could be concluded as merge sort.
+
+sort3 uses: selectionsort
+sorted10000 =   real    0m0.188s
+                user    0m0.123s
+                sys     0m0.029s
+
+reversed10000 = real    0m0.208s
+                user    0m0.123s
+                sys     0m0.040s
+
+random10000 =   real    0m0.193s
+                user    0m0.104s
+                sys     0m0.044s
+random50000 =   real    0m13.994s
+                user    0m2.596s
+                sys     0m0.160s
+
+How do you know?: This is either merge sort or selection sort.
+But the time taken for sorting large data is very high compared to sort2. Therefore this is selection sort
